@@ -2,7 +2,7 @@
 
 A HTML compressor tool that removes unnecessary whitespace and compresses HTML code.
 
-![](image.png)
+![](preview.gif)
 
 ## Features
 
