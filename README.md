@@ -1,6 +1,6 @@
 # HTML Compressor
 
-A HTML compressor tool that removes unnecessary whitespace and compresses HTML code.
+A HTML compressor tool that removes unnecessary whitespace and compresses HTML code newsletters.
 
 ![](preview.gif)
 
