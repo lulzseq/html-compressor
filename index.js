@@ -5,11 +5,9 @@ let history = [];
 
 function compressHtml(code) {
   return code
-    .replace(/\s*([{};>])\s*/g, '$1')
-    .replace(/\s*([{};>])\s*([a-zA-Z])/g, '$1$2')
-    .replace(/style\s*=\s*"\s*(.*?)\s*"/g, (match, p1) => `style="${p1.replace(/\s+/g, '')}"`)
-    .replace(/>\s+</g, '><')
-    .replace(/<br\s*\/?>/g, '<br/>');
+    .replace(/\s*([{}/>])\s*/g, '$1')
+    .replace(/<style[^>]*>([\s\S]*?)<\/style>/g, (match, s) => `<style>${s.replace(/\s*([,:;])\s*/g, '$1')}</style>`)
+    .replace(/style\s*=\s*"\s*([^"]*?)\s*"/g, (match, s) => `style="${s.replace(/\s*([,:;])\s*/g, '$1')}"`);
 }
 
 compressBtn.addEventListener('click', () => {
